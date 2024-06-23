@@ -1,0 +1,63 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/thanhdat4461/OrionMoblie/main/source')))()
+
+ local Window = OrionLib:MakeWindow({Name = "Undesired Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+local Tab = Window:MakeTab({
+	Name = "Humanoid",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "LocalPlayer"
+})
+Tab:AddButton({
+	Name = "Fly",
+	Callback = function()
+      	 	     loadstring(game:HttpGet("https://pastebin.com/raw/PtA3H6m2"))();
+    
+    end    
+})
+
+Tab:AddButton({
+	Name = "Infinite Yield",
+	Callback = function()
+         loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+
+		end    		
+})
+
+Tab:AddButton({
+	Name = "Hitbox",
+	Callback = function()
+         loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Update-script-hitbox-9326"))()
+
+		end    		
+})
+		
+Tab:AddSlider({
+	Name = "Walkspeed",
+	Min = 16,
+	Max = 500,
+	Default = 16,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+
+		end    
+  })
+
+Tab:AddSlider({
+	Name = "Jumppower",
+	Min = 1,
+	Max = 500,
+	Default = 50,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+
+		end    
+  })
+OrionLib:Init()
